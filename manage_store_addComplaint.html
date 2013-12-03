@@ -1,21 +1,21 @@
-﻿<form class="well">
+﻿<form class="well" ng-controller="ManageController">
 
     <h3>Adicionar Queixa</h3>
 
-    <label>Tipo</label>
+    <label>firstName</label>
+    <input type="text" ng-model="name.firstName">
+
+    <label>LastName</label>
+    <input type="text" ng-model="name.LastName">
+
+    <label>City</label>
     <input type="text">
 
-    <label>Assunto</label>
-    <input type="text">
-
-    <label>Nome</label>
-    <input type="text">
-
-    <label>Telefone</label>
+    <label>State</label>
     <input type="text">
 
     <hr>
 
-    <input type="submit" value="Salvar" class="btn btn-primary">
+    <input type="submit" value="Salvar" class="btn btn-primary" ng-click="addItem()">
     <a href="#/manage/store/1234" class="btn">Cancelar</a>
 </form>

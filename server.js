@@ -19,21 +19,26 @@ var data = [{"firstName": "Potranca", "LastName":"Rontas"},
 
 /* AQUI VEM TUDO DE PERFIL */
 /*********************************************************/
+/* recuperar */
 app.get('/users', function(req, res){
 	res.send(data);
 });
 
+/* salvar */
 app.post('/users', function(req, res){
 	data.push(req.body);
 	res.send(data);
 });
 
+/* deletar */
 app.delete('/users/:id', function(req, res){
 	//console.log(req.params.id);
 	data.splice(req.body, 1);
 	res.send(data);
 });
 
+
+/* alterar */
 app.put('/users', function(req, res){
 	res.send(data);
 });
