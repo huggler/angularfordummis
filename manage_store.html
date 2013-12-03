@@ -1,0 +1,55 @@
+
+<h1>Gerenciar Loja</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Loja</th>
+            <th>Cidade</th>
+            <th>Estado</th>
+            <th>Zip</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Americanas.com</td>
+            <td>Rio de Janeiro</td>
+            <td>RJ</td>
+            <td>54321</td>
+        </tr>
+        <tr>
+            <td>SubMarino.com.br</td>
+            <td>Rio de Janeiro</td>
+            <td>RJ</td>
+            <td>54321</td>
+        </tr>
+        <tr>
+            <td>Shoptime.com</td>
+            <td>Rio de Janeiro</td>
+            <td>RJ</td>
+            <td>54321</td>
+        </tr>
+        <tr>
+            <td>Soubarato.com.com</td>
+            <td>Rio de Janeiro</td>
+            <td>RJ</td>
+            <td>54321</td>
+        </tr>
+    </tbody>
+</table>
+
+<a href="#/manage/store/1234/edit" class="btn">
+    <i class="icon-edit"></i> Editar Loja</a>
+
+<hr>
+
+<ul class="nav nav-tabs">
+    <li class="active" ng-class="{active:$state.includes('manage.store.complaints') || $state.includes('manage.store.addComplaint')}">
+        <a href="#/manage/store/1234">Reclamações</a></li>
+    <li ng-class="{active:$state.includes('manage.store.accidents')}">
+        <a href="#/manage/store/1234/accidents">Acidentes</a></li>
+</ul>
+
+<div ui-view>
+    <!-- Third Level -->
+</div>

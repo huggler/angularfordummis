@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="ApplicationController">
+
+<head>
+    <title>AngularJS: Aplicação Teste</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link href="style.css" rel="stylesheet">
+    <link href="http://goo.gl/5fjaQ" rel="stylesheet"><!--Bootstrap-->
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="navbar">
+        <div class="navbar-inner">
+            <a class="brand" href="#/">Aplicação Teste</a>
+            <ul class="nav">
+                <li ng-class="{active:$state.includes('manage')}">
+                    <a href="#/manage/store/1234">Gerenciar</a></li>
+                <li ng-class="{active:$state.includes('assess')}">
+                    <a href="#/assess">Avaliação</a></li>
+                <li ng-class="{active:$state.includes('analyze')}">
+                    <a href="#/analyze">Analizar</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div ui-view>
+        <!-- First Level -->
+    </div>
+
+</div>
+
+<div class="container">
+<pre>
+$state = {{$state.current.name}}
+$stateParams = {{$stateParams}}
+</pre>
+</div>
+
+<script src="js/angular.js">/*Angular*/</script>
+<script src="js/jquery.js">/*jQuery*/</script>
+<script src="js/bootstrap.js">/*Bootstrap*/</script>
+<script src="ui_router.js"></script>
+<script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+﻿
+<a href="#/manage/store/1234/complaints/new" class="btn">
+    <i class="icon-plus"></i> Adicionar Queixa</a>
+    <div class="pull-right">
+        <input type="text" ng-model="queryFilter" placeholder="filtro">
+    </div>
+<table class="table table-bordered table-striped" style="margin-top:20px" ng-controller="ManageController">
+    <thead>
+        <tr>
+            <th>firstName</th>
+            <th>LastName</th>
+            <th>City</th>
+            <th>State</th>
+            <th width='20'></th>
+        </tr>
+    </thead>
+    <tbody>
+       <tr ng-repeat="name in names | filter:queryFilter">
+            <td>{{name.firstName}}</td>
+            <td>{{name.LastName}}</td>
+            <td>City</td>
+            <td>State</td>
+            <td><i class="icon-trash" ng-click="removeItem($index)"></i></td>
+        </tr>
+    </tbody>
+</table>
