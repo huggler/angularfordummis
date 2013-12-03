@@ -73,7 +73,7 @@ angular.module('app').controller('ApplicationController',['$scope',function($sco
 }]);
 
 
-function ManageController($scope, $http) {
+function ManageController($scope, $http, $location) {
 
     var ip = "http://172.20.15.62:3000";
 
@@ -84,9 +84,12 @@ function ManageController($scope, $http) {
     });
 
     $scope.addItem = function(){
-        $http.post(ip+"/users", {firstName: "1212121", LastName: "tetete"}).success(function(data){
-            $scope.names = data;
-        });
+        if(confirm("Deseja realmente salvar este registro?")){
+            $http.post(ip+"/users", $scope.name).success(function(data){
+                $scope.names = data;
+                $location.path("/manage/store/1234");
+            });
+        }
     };
 
     $scope.removeItem = function(id){
