@@ -15,7 +15,7 @@
         </tr>
     </thead>
     <tbody>
-       <tr ng-repeat="name in names | filter:queryFilter">
+       <tr ng-repeat="name in names | filter:queryFilter" ng-animate=" 'animate' ">
             <td>{{name.firstName}}</td>
             <td>{{name.LastName}}</td>
             <td>City</td>

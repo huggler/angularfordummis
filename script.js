@@ -75,7 +75,7 @@ angular.module('app').controller('ApplicationController',['$scope',function($sco
 
 function ManageController($scope, $http, $location) {
 
-    var ip = "http://172.20.15.62:3000";
+    var ip = "http://localhost:3000";
 
     $scope.names = [];
 
