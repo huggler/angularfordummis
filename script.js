@@ -1,4 +1,4 @@
-﻿angular.module('app',['ui.compat']).config(function($stateProvider,$routeProvider){
+angular.module('app',['ui.compat','firebase']).config(function($stateProvider,$routeProvider){
 
     var home = {redirectTo:'/home'};
 
@@ -68,27 +68,39 @@
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
 });
-angular.module('app').controller('ApplicationController',['$scope',function($scope){
-    /* ... */
+angular.module('app').controller('ApplicationController',['$scope','firebase',function($scope){
+
+
 }]);
 
 
-function ManageController($scope, $http, $location) {
+function ManageController($scope, $http, $location, $firebase) {
 
-    var ip = "http://localhost:3000";
+    var ref = new Firebase('https://felipehuggler.firebaseio.com/items');
+    //$scope.items = $firebase(ref);
+    //var ip = "http://localhost:3000";
 
-    $scope.names = [];
+    $scope.names = $firebase(ref);
 
-    $http.get(ip+"/users").success(function(data){
+    /*$http.get(ip+"/users").success(function(data){
         $scope.names = data;
-    });
+    });*/
 
     $scope.addItem = function(){
         if(confirm("Deseja realmente salvar este registro?")){
-            $http.post(ip+"/users", $scope.name).success(function(data){
+            /*$http.post(ip+"/users", $scope.name).success(function(data){
                 $scope.names = data;
                 $location.path("/manage/store/1234");
-            });
+            });*/
+
+            /*$scope.names.$add({
+              from: $scope.username, content: $scope.message
+            });*/
+
+            $scope.names.$add($scope.name);
+
+
+            $location.path("/manage/store/1234");
         }
     };
 
